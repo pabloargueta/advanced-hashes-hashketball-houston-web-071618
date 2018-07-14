@@ -100,6 +100,9 @@ end
 
 def team_names
   
+  game_hash.each {|location, team_data|
+  
+  }
   
 end
 
