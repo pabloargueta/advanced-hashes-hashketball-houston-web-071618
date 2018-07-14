@@ -103,6 +103,7 @@ def team_names
   game_hash.each {|location, team_data|
   array_names << team_data[:team_name]
   }
+  array_names
   
 end
 
