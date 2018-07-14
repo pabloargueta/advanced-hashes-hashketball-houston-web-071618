@@ -56,6 +56,7 @@ def num_points_scored(player_name)
             points = stats.fetch(:points)
           end
         }
+
       end
     }
 
@@ -84,4 +85,66 @@ def shoe_size(player_name)
   shoe_size
 end
 
+def team_colors(team_name)
+  colors_array = []
+  game_hash.each {|location, team_data|
+    if team_data[:team_name] == team_name
+      colors_array = team_data[:colors]
+    end
+    
+  }
+  
+  colors_array
+  
+end
+
+def team_names
+  array_names =[]
+  game_hash.each {|location, team_data|
+  array_names << team_data[:team_name]
+  }
+  
+  array_names
+  
+end
+
+def player_numbers(team_name)
+  players_numbers = []
+  game_hash.each {|location, team_data|
+    if team_data[:team_name] == team_name
+      team_data[:players].each {|player, data|
+        players_numbers << data[:number]
+      }
+    end
+  }
+  players_numbers
+end
+
+def player_stats(player_name)
+  player_stats = {}
+  game_hash.each {|location, team_data|
+    team_data[:players].each {|player, stats|
+      if player == player_name
+        player_stats = stats
+        
+      end
+    }
+  }
+  player_stats
+end
+
+def big_shoe_rebounds
+  size = 0
+  player_name = nil
+  game_hash.each {|location, team_data|
+    team_data[:players].each {|player, stats|
+      if size < shoe_size(player)
+        size = shoe_size(player)
+        player_name = player
+      end
+    }
+  }
+  player_stats(player_name).fetch(:rebounds)
+  
+end
 
