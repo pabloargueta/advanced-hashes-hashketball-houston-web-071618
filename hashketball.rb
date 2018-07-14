@@ -1,6 +1,6 @@
 # Write your code here!
-
 require "pry"
+
 
 def game_hash
   
@@ -46,15 +46,42 @@ end
 =end
 
 def num_points_scored(player_name)
-  game_hash.each { |team, team_info|
-    if team_info.has_key?(player_name)
-      [team][team_info][player_name][:points]
-    end
-    
+  
+  points = 0
+  game_hash.each {|location, team_data|
+    team_data.each {|attribute, data|
+      if attribute == :players
+        data.each {|data_item, stats|
+          if data_item == player_name
+            points = stats.fetch(:points)
+          end
+        }
+      end
+    }
+
   }
+  
+  points
   
 end
 
+def shoe_size(player_name)
+  
+    shoe_size = 0
+  game_hash.each {|location, team_data|
+    team_data.each {|attribute, data|
+      if attribute == :players
+        data.each {|data_item, stats|
+          if data_item == player_name
+            shoe_size = stats.fetch(:shoe)
+          end
+        }
+      end
+    }
 
+  }
+  
+  shoe_size
+end
 
 
