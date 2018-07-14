@@ -111,7 +111,11 @@ end
 def player_numbers(team_name)
   players_numbers = []
   game_hash.each {|location, team_data|
-    binding.pry
+    if team_data[:team_name] == team_name
+      team_data[:players].each {
+        binding.pry
+      }
+    end
   }
 end
 
