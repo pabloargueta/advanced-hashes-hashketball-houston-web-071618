@@ -109,6 +109,9 @@ def team_names
 end
 
 def team_names(team_name)
-  
+  jersey_numbers = []
+  game_hash.each {|location,team_data|
+    
+  }
 end
 
