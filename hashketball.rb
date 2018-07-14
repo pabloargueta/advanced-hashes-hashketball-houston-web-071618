@@ -47,6 +47,7 @@ end
 
 def num_points_scored(player_name)
   
+<<<<<<< HEAD
   points = 0
   game_hash.each {|location, team_data|
     team_data.each {|attribute, data|
@@ -56,6 +57,12 @@ def num_points_scored(player_name)
             points = stats.fetch(:points)
           end
         }
+=======
+  game_hash.each {|location, team_data|
+    team_data.each {|attribute, data|
+      if attribute == :players && data == player_name
+        binding.pry
+>>>>>>> a5ca3fab9466bd009a621ab6911582e607667076
       end
     }
 
