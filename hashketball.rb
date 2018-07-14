@@ -113,7 +113,7 @@ def player_numbers(team_name)
   game_hash.each {|location, team_data|
     if team_data[:team_name] == team_name
       team_data[:players].each {|player, data|
-        binding.pry
+        players_numbers << data[:number]
       }
     end
   }
