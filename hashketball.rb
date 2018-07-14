@@ -89,6 +89,8 @@ def team_colors(team_name)
   colors_array = []
   game_hash.each {|location, team_data|
     if team_data[:team_name] == team_name
+      binding.pry
+    end
     
   }
   
