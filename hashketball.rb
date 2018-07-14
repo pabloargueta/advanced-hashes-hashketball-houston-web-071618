@@ -108,8 +108,8 @@ def team_names
   
 end
 
-def team_names(team_name)
-  jersey_numbers = []
+def player_numbers(team_name)
+  players_numbers = []
   game_hash.each {|location, team_data|
     binding.pry
   }
