@@ -99,9 +99,9 @@ def team_colors(team_name)
 end
 
 def team_names
-  
+  array_names =[]
   game_hash.each {|location, team_data|
-  binding.pry
+  array_names << team_data[:team_name]
   }
   
 end
